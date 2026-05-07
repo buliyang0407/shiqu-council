@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.DS_Store
+._*
+.logs/
+.pids/
+.qa/
+ui-v2/
+*.mhtml
+tests/*.jpg
+tests/*.jpeg
+tests/*.png
+*.tgz
+*.tar.gz

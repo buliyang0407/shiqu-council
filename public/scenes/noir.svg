@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#090d12"/>
+      <stop offset="0.45" stop-color="#172130"/>
+      <stop offset="1" stop-color="#5c4a32"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="50%" cy="28%" r="45%">
+      <stop offset="0" stop-color="#f5d38b" stop-opacity="0.8"/>
+      <stop offset="0.45" stop-color="#ad7b42" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1800" height="1200" fill="url(#g)"/>
+  <rect width="1800" height="1200" fill="url(#lamp)"/>
+  <g opacity="0.26" stroke="#d7e7ff" stroke-width="3">
+    <path d="M110 0 35 1200M245 0 175 1200M410 0 315 1200M1550 0l80 1200M1690 0l60 1200"/>
+    <path d="M0 255h1800M0 560h1800M0 865h1800"/>
+  </g>
+  <g opacity="0.22" fill="none" stroke="#f7d98c" stroke-width="6">
+    <path d="M360 890C560 700 705 620 930 645c225 25 405-75 560-265"/>
+    <circle cx="930" cy="645" r="70"/>
+    <circle cx="1490" cy="380" r="42"/>
+    <circle cx="360" cy="890" r="42"/>
+  </g>
+  <rect x="0" y="0" width="1800" height="1200" fill="#000" opacity="0.24"/>
+</svg>

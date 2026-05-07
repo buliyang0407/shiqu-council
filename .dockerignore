@@ -1,0 +1,13 @@
+.DS_Store
+._*
+.git
+.logs
+.pids
+.qa
+docs/superpowers
+tests
+ui-v2
+*.command
+.env.local
+*.tgz
+*.tar.gz

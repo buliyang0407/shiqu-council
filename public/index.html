@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>石渠</title>
+    <link rel="stylesheet" href="/styles.css?v=20260506-council-v2b" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <h1>石渠</h1>
+          <p>高阶智能体的思辨推演</p>
+        </div>
+      </header>
+
+      <section class="composer" aria-label="话题输入">
+        <label for="topicInput">话题</label>
+        <div class="input-row">
+          <textarea
+            id="topicInput"
+            rows="3"
+            placeholder="比如：五一节要不要带娃出游？每天喝咖啡对人体有没有危害？"
+          ></textarea>
+          <button type="button" id="startButton">开始</button>
+        </div>
+        <div class="settings-row">
+          <label>
+            人数
+            <select id="agentCount"></select>
+          </label>
+          <label>
+            轮次
+            <select id="roundsInput">
+              <option value="1">1 轮</option>
+              <option value="2">2 轮</option>
+              <option value="3" selected>3 轮</option>
+              <option value="4">4 轮</option>
+              <option value="5">5 轮</option>
+            </select>
+          </label>
+          <label>
+            谋士发言
+            <select id="speechLimitSelect">
+              <option value="160">简短 160 字</option>
+              <option value="300" selected>标准 300 字</option>
+              <option value="500">深谈 500 字</option>
+              <option value="800">专家 800 字</option>
+            </select>
+          </label>
+          <button type="button" class="ghost-button" id="sampleTravel">五一带娃出游</button>
+          <button type="button" class="ghost-button" id="sampleCoffee">每天喝咖啡</button>
+          <label class="theme-setting">
+            场景
+            <select id="themeSelect" aria-label="界面风格">
+              <option value="archive">石渠阁</option>
+              <option value="noir">雨夜密室</option>
+              <option value="astrolabe">星图推演</option>
+              <option value="warroom">沙盘军帐</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="agent-panel" aria-label="谋士设置">
+        <div class="panel-head">
+          <h2>谋士席</h2>
+          <span>每位谋士可单独选择模型和人设；默认不设立场，只负责补充判断。</span>
+        </div>
+        <div class="agent-list" id="agentList"></div>
+      </section>
+
+      <section class="stream-panel">
+        <div class="stream-head">
+          <div class="stream-title">
+            <h2>议事案卷</h2>
+            <p id="currentTopicText">等待设题</p>
+          </div>
+          <div class="stream-actions">
+            <button type="button" class="ghost-button new-session-button" id="newSessionButton" disabled>新开一局</button>
+            <button type="button" class="ghost-button" id="aiPosterButton" disabled>AI生图</button>
+            <button type="button" class="ghost-button" id="saveHistoryButton" disabled>保存本次</button>
+            <select id="historySelect" aria-label="历史记录">
+              <option value="">历史记录</option>
+            </select>
+            <span id="statusText">等待问策</span>
+          </div>
+        </div>
+        <div class="timeline" id="timeline" aria-live="polite"></div>
+        <button type="button" class="scroll-latest" id="scrollLatestButton" hidden>有新发言</button>
+      </section>
+
+      <section class="insert-panel" aria-label="插入讨论">
+        <textarea id="insertInput" rows="2" placeholder="插入你的新想法，下一位谋士会结合这句话重新推演。"></textarea>
+        <div class="insert-actions">
+          <label>
+            续聊
+            <select id="continueRounds">
+              <option value="1" selected>1 轮</option>
+              <option value="2">2 轮</option>
+            </select>
+          </label>
+          <button type="button" id="insertButton" disabled>继续问策</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js?v=20260506-council-v2b" type="module"></script>
+  </body>
+</html>
