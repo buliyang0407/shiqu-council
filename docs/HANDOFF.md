@@ -1,5 +1,26 @@
 # 石渠项目交接文档
 
+## 暂时归档与恢复
+
+2026-10-03，按用户要求暂时归档，不删除项目。NAS 容器 `shiqu-3kingdom` 已手动停止；部署文件、密钥配置、镜像和容器保留，其他 NAS 服务不做改动。本地项目也完整保留。GitHub 仓库设为归档，解除归档后可继续提交。
+
+容器重启策略为 `unless-stopped`，手动停止后不会随 NAS 重启自动恢复。仅恢复服务时，在 NAS Docker 管理界面启动 `shiqu-3kingdom`，或通过 SSH 执行：
+
+```bash
+docker start shiqu-3kingdom
+docker inspect shiqu-3kingdom --format '{{.State.Status}}'
+```
+
+随后检查 `http://192.168.3.71:5173/api/config` 和页面。若当前账号没有 Docker 权限，命令前加 `sudo`。恢复前请核对 API 余额、套餐、模型与接口是否仍有效；不需要重建或删除容器。
+
+继续开发前解除 GitHub 归档：
+
+```bash
+gh repo unarchive buliyang0407/shiqu-council --yes
+```
+
+历史记录和自定义人设存于原浏览器的 localStorage，请保留浏览器站点数据。此次归档不清理它们，也不清理任何 NAS 文件。
+
 下一个对话直接让 Codex 先看这个文件：
 
 ```text
@@ -19,6 +40,7 @@
 - NAS 访问地址：`http://192.168.3.71:5173`
 - Docker 容器名：`shiqu-3kingdom`
 - 服务端口：`5173`
+- 运行状态：2026-10-03 暂时归档，NAS 服务已停止；上方地址仅恢复后可用。
 - 当前日期上下文：项目最近一轮稳定部署在 2026-05-06 晚间完成。
 
 ## 当前模型策略
